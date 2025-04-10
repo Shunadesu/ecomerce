@@ -1,8 +1,11 @@
 import React from 'react'
+import { HeroSection } from '../components/common'
 
 const Home = () => {
   return (
-    <div>Home</div>
+    <div className='w-full h-full relative'>
+      <HeroSection />
+    </div>
   )
 }
 
