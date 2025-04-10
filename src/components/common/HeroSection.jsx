@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 import Header from './Header'
+import RecentPurchaseNotification from '../public/RecentPurchaseNotification';
+import Sidebar from './SideBar';
 
 const HeroSection = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -33,6 +35,7 @@ const HeroSection = () => {
 
   return (
     <div className='h-[100vh] w-full flex flex-col items-center justify-center relative'>
+        
         {slides.map((slide, index) => (
             <div
             key={slide.id}
@@ -46,13 +49,10 @@ const HeroSection = () => {
                 className="w-full h-full object-cover"
             />
             {/* Dark overlay for better text visibility */}
-            <div className="absolute inset-0 bg-black opacity-30"></div>
+            <div className="absolute inset-0 bg-black opacity-10"></div>
             </div>
         ))}
 
-        <Header />
-
-        
         {/* Main content */}
       <div className="container mx-auto flex flex-col items-center justify-center z-20 px-4 text-center text-white">
         <h1 className="font-dm-serif inline-block align-top w-full text-[40px] font-normal text-white tracking-[0] leading-[35px] mb-[20px] capitalize transition-all duration-700 transform translate-y-0">
@@ -99,7 +99,8 @@ const HeroSection = () => {
             </svg>
             </button>
         </div>
-        
+
+        <RecentPurchaseNotification />
       </div>
   )
 }
